@@ -104,6 +104,8 @@ export default class FullCalendarComponent extends NavigationMixin(LightningElem
         dayGridWeek: { buttonText: "week" },
         dayGridDay: { buttonText: "day" }
       },
+      editable: true,
+      selectable: true,
       
       eventClick: info => {
         const selectedEvent = new CustomEvent('fceventclick', { detail: info });
