@@ -24,10 +24,11 @@ public with sharing class FullCalendarController {
         } else {
             allDayField = '';
         }
-        soqlQuery += 'SELECT Id, '+titleField+', '+startField+', '+endField + colorField + allDayField+' FROM ' + objectName;
+        soqlQuery += 'SELECT Id, OwnerId, '+titleField+', '+startField+', '+endField + colorField + allDayField+' FROM ' + objectName;
        
         soqlQuery += ' WHERE (('+startField+' >= '+lastMonthStr+' AND '+startField+' <= '+nextMonthStr+')';
         soqlQuery += ' OR ('+endField+' >= '+lastMonthStr+' AND '+endField+' <= '+nextMonthStr+'))';
+        soqlQuery =+ ' AND (OwnerId = '0058W000009uVf4' OR OwnerId = '0058W000009uof0');
         soqlQuery += additionalFilter;
         System.debug('startDate = ' + startDate.format());
         System.debug('endDate = ' + endDate.format());
