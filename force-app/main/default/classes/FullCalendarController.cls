@@ -28,7 +28,7 @@ public with sharing class FullCalendarController {
        
         soqlQuery += ' WHERE (('+startField+' >= '+lastMonthStr+' AND '+startField+' <= '+nextMonthStr+')';
         soqlQuery += ' OR ('+endField+' >= '+lastMonthStr+' AND '+endField+' <= '+nextMonthStr+'))';
-        soqlQuery =+ ' AND (OwnerId = '0058W000009uVf4' OR OwnerId = '0058W000009uof0');
+        soqlQuery =+ ' AND (OwnerId = \'0058W000009uVf4\' OR OwnerId = \'0058W000009uof0\');
         soqlQuery += additionalFilter;
         System.debug('startDate = ' + startDate.format());
         System.debug('endDate = ' + endDate.format());
